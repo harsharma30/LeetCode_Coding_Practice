@@ -2,12 +2,11 @@ import requests
 import json
 import os
 
-# Replace with your LeetCode username
-LEETCODE_USERNAME = "your_username"
+LEETCODE_USERNAME = "harsharma30"
 
 # Fetch user stats from LeetCode API
 def fetch_leetcode_stats():
-    url = "https://leetcode-stats-api.herokuapp.com/" + LEETCODE_USERNAME
+    url = "https://leetcode-stats-api.herokuapp.com/" + harsharma30
     response = requests.get(url)
     
     if response.status_code == 200:
