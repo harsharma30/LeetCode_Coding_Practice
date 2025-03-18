@@ -6,6 +6,7 @@ class Solution {
         if(n==0){
             return 0;
         }
+        // 0 1 1 2 3 5 
             int f1 = 0;
             int f2 = 1;
             int t = 0;
