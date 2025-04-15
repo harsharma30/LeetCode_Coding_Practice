@@ -3,8 +3,7 @@ import java.util.List;
 
 class TreeNode {
     int val;
-    TreeNode left;
-    TreeNode right;
+    TreeNode left, right;
 
     TreeNode(int val) {
         this.val = val;
@@ -12,17 +11,18 @@ class TreeNode {
 }
 
 class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        preorder(root, result);
-        return result;
+    private void dfs(TreeNode root, List<Integer> ans) {
+        if (root == null) {
+            return;
+        }
+        ans.add(root.val);
+        dfs(root.left, ans);
+        dfs(root.right, ans);
     }
 
-    private void preorder(TreeNode node, List<Integer> result) {
-        if (node == null) return;
-
-        result.add(node.val);
-        preorder(node.left, result);         
-        preorder(node.right, result);        
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        dfs(root, ans);
+        return ans;
     }
 }
